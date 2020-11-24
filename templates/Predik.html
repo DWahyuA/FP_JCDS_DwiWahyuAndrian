@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Harga</title>
+</head>
+<body>
+    <h1>Prediksi Harga</h1>
+    <br>
+    <form method="POST" action="http://127.0.0.1:5000/result">
+        Year                    : <input type="number" name="Y"/>
+        <br> Production_Value   : <input type="number" name="pv"/>
+        <br>Price_Index         : <input type="number" name="pi"/>
+        <br>Import_Q            : <input type="number" name="iq"/>
+        <br>Export_Q            : <input type="number" name="eq"/>
+        <br>Temp_Change_Value   : <input type="number" name="tc"/>
+        <br>Domain              : <input type="number" name="d"/>
+        <br>
+        <input type="submit" value="Classify">
+    </form>
+</body>
+</html>
