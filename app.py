@@ -1,6 +1,6 @@
 import joblib
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -25,8 +25,11 @@ def hasil():
         pv = float(input['pv'])
         tc = float(input['tc'])
         d = float(input['d'])
-        predik = model.predict([[Y,pv,pi,iq,eq,pv,tc,d]])[0]
-    return render_template('Predik.html')
+        pred = model.predict([[Y,pv,pi,iq,eq,pv,tc,d]])[0]
+
+
+        
+    return render_template('hasil.html', data=input, prediksi=pred)
 
 
 
@@ -34,5 +37,5 @@ def hasil():
 
 
 if __name__ == "__main__":
-    model = joblib.load('Model_LR_PRICE')
+    # model = joblib.load('Model_RF_PRICE')
     app.run(debug=True) 
